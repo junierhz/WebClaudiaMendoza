@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claudia Milena Mendoza | Inversión en Lotes con Futuro</title>
+  <meta name="description" content="Inversión inteligente en el Caribe. Lotes en condominio con planificación, respaldo legal y alta plusvalía. Proyectos inmobiliarios seleccionados por Claudia Milena Mendoza.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Cormorant Garamond (Serif Editorial) & Montserrat (Sans-serif Técnico) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Custom Colors and Fonts configuration -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pearl: '#FAFAFA',
+            charcoal: '#4A4E54',
+            rosegold: '#C5A08E',
+            'rosegold-light': '#D6B9AA',
+            'charcoal-dark': '#383C41',
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Montserrat"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for Architectural Grid and drafting lines -->
+  <style>
+    /* Patrón de cuadrícula técnica (Papel milimetrado de plano) */
+    .bg-architect-grid {
+      background-color: #FAFAFA;
+      background-image: 
+        linear-gradient(rgba(74, 78, 84, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 78, 84, 0.04) 1px, transparent 1px),
+        linear-gradient(rgba(74, 78, 84, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(74, 78, 84, 0.015) 1px, transparent 1px);
+      background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+      background-position: center center;
+    }
+
+    /* Subcuadrícula fina para overlays o tarjetas */
+    .bg-technical-overlay {
+      background-image: 
+        linear-gradient(rgba(197, 160, 142, 0.15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(197, 160, 142, 0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    /* Líneas decorativas que extienden el plano (Draft Lines) */
+    .draft-line-h {
+      position: relative;
+    }
+    .draft-line-h::after {
+      content: '';
+      position: absolute;
+      left: -50px;
+      right: -50px;
+      height: 1px;
+      background-color: rgba(74, 78, 84, 0.08);
+      bottom: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .draft-line-v {
+      position: relative;
+    }
+    .draft-line-v::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      bottom: -50px;
+      width: 1px;
+      background-color: rgba(74, 78, 84, 0.08);
+      right: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* Ocultar barra de desplazamiento en carrusel */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-architect-grid font-sans text-charcoal min-h-screen relative overflow-x-hidden selection:bg-rosegold/20 selection:text-charcoal">
+
+  <!-- NAVBAR ESTÁTICO -->
+  <header class="w-full bg-pearl border-b border-charcoal/10 relative z-50">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Logotipo -->
+      <a href="#inicio" class="flex items-center">
+        <img src="LOGO CLAUDIA MENDOZA-02.svg" alt="Claudia Milena Mendoza" class="h-10 md:h-12 w-auto object-contain">
+      </a>
+      
+      <!-- Enlaces de Navegación (Desktop) -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="#inicio" class="relative py-2 text-charcoal hover:text-rosegold transition-colors duration-300 font-sans text-xs tracking-widest uppercase font-medium group">
+          Inicio
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#proyectos" class="relative py-2 text-charcoal hover:text-rosegold transition-colors duration-300 font-sans text-xs tracking-widest uppercase font-medium group">
+          Proyectos
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#nosotros" class="relative py-2 text-charcoal hover:text-rosegold transition-colors duration-300 font-sans text-xs tracking-widest uppercase font-medium group">
+          Nosotros
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#por-que-invertir" class="relative py-2 text-charcoal hover:text-rosegold transition-colors duration-300 font-sans text-xs tracking-widest uppercase font-medium group">
+          ¿Por qué invertir?
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#faq" class="relative py-2 text-charcoal hover:text-rosegold transition-colors duration-300 font-sans text-xs tracking-widest uppercase font-medium group">
+          FAQ
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="#contacto" class="relative py-2 text-charcoal hover:text-rosegold transition-colors duration-300 font-sans text-xs tracking-widest uppercase font-medium group">
+          Contacto
+          <span class="absolute bottom-0 left-0 w-0 h-[1px] bg-rosegold transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </nav>
+
+      <!-- Botón de Menú Móvil -->
+      <button id="menu-btn" class="md:hidden text-charcoal focus:outline-none" aria-label="Abrir menú">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Menú Móvil Desplegable -->
+    <div id="mobile-menu" class="hidden md:hidden w-full bg-pearl border-t border-charcoal/10 absolute left-0 top-20 z-40 transition-all duration-300">
+      <div class="px-6 py-8 flex flex-col space-y-6">
+        <a href="#inicio" class="text-charcoal hover:text-rosegold transition-colors font-sans text-xs tracking-widest uppercase font-medium block">Inicio</a>
+        <a href="#proyectos" class="text-charcoal hover:text-rosegold transition-colors font-sans text-xs tracking-widest uppercase font-medium block">Proyectos</a>
+        <a href="#nosotros" class="text-charcoal hover:text-rosegold transition-colors font-sans text-xs tracking-widest uppercase font-medium block">Nosotros</a>
+        <a href="#por-que-invertir" class="text-charcoal hover:text-rosegold transition-colors font-sans text-xs tracking-widest uppercase font-medium block">¿Por qué invertir?</a>
+        <a href="#faq" class="text-charcoal hover:text-rosegold transition-colors font-sans text-xs tracking-widest uppercase font-medium block">FAQ</a>
+        <a href="#contacto" class="text-charcoal hover:text-rosegold transition-colors font-sans text-xs tracking-widest uppercase font-medium block">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECCIÓN 1: HERO / BANNER PRINCIPAL (Ajustado para mayor visibilidad del Banner) -->
+  <section id="inicio" class="relative min-h-[90vh] flex items-center justify-start overflow-hidden border-b border-charcoal/10">
+    
+    <!-- Imagen de Fondo Principal -->
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('IMAGEN BANNER HERO.jpeg');"></div>
+    
+    <!-- Capa de Textura Técnica y Oscurecimiento Sutil (Para visibilidad de imagen y legibilidad) -->
+    <div class="absolute inset-0 bg-charcoal/45 backdrop-blur-[0.5px]"></div>
+    <div class="absolute inset-0 bg-technical-overlay opacity-25"></div>
+
+    <!-- Contenedor del Contenido (Directamente sobre el fondo con tipografía clara) -->
+    <div class="w-full max-w-7xl mx-auto px-6 relative z-10 py-16">
+      <div class="max-w-3xl text-pearl relative">
+        <!-- Detalle de Esquinas CAD Translúcidas en el marco lateral de contenido -->
+        <div class="border-l border-rosegold/35 pl-6 md:pl-10 py-4 relative">
+          <span class="absolute -top-1.5 left-0 text-rosegold font-mono text-xs">+</span>
+          <span class="absolute -bottom-2.5 left-0 text-rosegold font-mono text-xs">+</span>
+
+          <!-- Subtítulo pequeño -->
+          <p class="text-rosegold font-sans text-xs uppercase tracking-widest font-semibold mb-4 leading-relaxed">
+            Inversión Inteligente en el Caribe / Lotes en condominio con planificación y respaldo legal.
+          </p>
+          
+          <!-- Título H1 -->
+          <h1 class="font-serif text-white text-5xl md:text-6xl lg:text-7xl font-light tracking-tight leading-none mb-6 drop-shadow-md">
+            Invierte en Lotes con Futuro.
+          </h1>
+          
+          <!-- Párrafo Descriptivo -->
+          <p class="font-sans text-pearl/90 text-sm md:text-base leading-relaxed mb-8 max-w-2xl drop-shadow-sm">
+            Proyectos inmobiliarios en condominio con plusvalía garantizada, ubicación estratégica y legalidad 100% respaldada. Pensados para construir y valorizar en el tiempo.
+          </p>
+          
+          <!-- Botón de Acción -->
+          <a href="#proyectos" class="group relative inline-flex items-center justify-between px-8 py-4 border border-rosegold text-rosegold hover:bg-rosegold hover:text-pearl transition-all duration-300 font-sans text-xs uppercase tracking-widest font-semibold rounded-none bg-charcoal/20 backdrop-blur-[2px]">
+            <span>Ver Proyectos</span>
+            <span class="ml-3 transform group-hover:translate-x-1 transition-transform duration-300">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Indicador de Coordenadas de la Sección -->
+    <div class="absolute bottom-6 right-6 hidden md:block text-[10px] font-mono text-pearl/50 tracking-widest">
+      SEC_01 // LAT. 10.3997° N / LONG. 75.5144° W
+    </div>
+  </section>
+
+  <!-- SECCIÓN 2: NUESTROS PROYECTOS (SLIDER CON CONTROLES A LOS COSTADOS) -->
+  <section id="proyectos" class="py-24 border-b border-charcoal/10 relative overflow-hidden bg-pearl/40">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Encabezado de Sección con Líneas de Guía -->
+      <div class="max-w-3xl mb-12 pb-6 border-b border-charcoal/10 relative">
+        <span class="font-mono text-xs text-rosegold uppercase tracking-widest block mb-2">[ SELECCIÓN EXCLUSIVA ]</span>
+        <h2 class="font-serif text-charcoal text-3xl md:text-4xl lg:text-5xl font-light">
+          Descubre las mejores oportunidades de inversión.
+        </h2>
+      </div>
+
+      <!-- Contenedor del Slider / Carrusel con botones en los costados -->
+      <div class="relative px-4 md:px-14">
+        
+        <!-- Botón Prev (A la izquierda) -->
+        <button id="prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 border border-rosegold text-rosegold bg-pearl/90 hover:bg-rosegold hover:text-pearl flex items-center justify-center transition-colors duration-300 rounded-none focus:outline-none z-20" aria-label="Proyecto anterior">
+          <span class="transform rotate-180 block text-lg">→</span>
+        </button>
+        
+        <!-- Slider Wrapper -->
+        <div class="overflow-hidden">
+          <div id="slider-track" class="flex transition-transform duration-500 ease-in-out -mx-4">
+            
+            <!-- Proyecto Destacado 1: Mayatt (Disponible) -->
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+              <div class="bg-pearl border border-charcoal/15 flex flex-col h-full rounded-sm overflow-hidden group hover:border-rosegold transition-colors duration-500">
+                
+                <!-- Imagen y Badge -->
+                <div class="relative overflow-hidden aspect-[4/3] border-b border-charcoal/15">
+                  <div class="absolute top-4 left-4 z-10">
+                    <span class="bg-rosegold/90 text-pearl text-[9px] font-sans font-bold uppercase tracking-widest px-3 py-1.5 border border-rosegold-light/20">
+                      Disponible
+                    </span>
+                  </div>
+                  <img src="Mayatt portada.jpeg" alt="Mayatt" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+
+                <!-- Contenido de la Tarjeta -->
+                <div class="p-8 flex flex-col flex-grow">
+                  <span class="font-mono text-[10px] text-rosegold tracking-wider block mb-1">PROYECTO I // DISEÑO PREMIUM</span>
+                  <h3 class="font-serif text-charcoal text-2xl font-light mb-3">Mayatt</h3>
+                  <p class="font-sans text-charcoal/70 text-xs leading-relaxed mb-6 flex-grow">
+                    Lotes en condominio exclusivo con un diseño urbanístico de vanguardia en el Caribe. Cuenta con vías internas pavimentadas, amenidades premium, portería de control y reglamento arquitectónico estricto.
+                  </p>
+                  <a href="mayatt.html" class="inline-flex items-center text-xs uppercase tracking-widest text-rosegold font-semibold hover:text-charcoal transition-colors duration-300 group/btn mt-auto">
+                    <span>Ver Detalles del Proyecto</span>
+                    <span class="ml-2 transform group-hover/btn:translate-x-1 transition-transform duration-300">→</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 2: Próximamente -->
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+              <div class="bg-pearl/50 border border-charcoal/15 flex flex-col h-full rounded-sm overflow-hidden min-h-[420px] relative tech-grid-bg-fine group hover:border-rosegold transition-colors duration-500">
+                <!-- SVG Blueprint (Plano de Casa) en el fondo -->
+                <svg class="absolute right-4 top-4 w-44 h-44 opacity-[0.07] text-charcoal pointer-events-none group-hover:opacity-[0.12] transition-opacity duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.3">
+                  <rect x="5" y="5" width="90" height="90" />
+                  <line x1="5" y1="35" x2="95" y2="35" />
+                  <line x1="5" y1="70" x2="95" y2="70" />
+                  <line x1="45" y1="5" x2="45" y2="95" />
+                  <circle cx="45" cy="35" r="10" />
+                  <path d="M 5,5 L 95,95 M 95,5 L 5,95" />
+                </svg>
+                
+                <div class="p-8 flex flex-col h-full justify-between z-10 flex-grow">
+                  <div>
+                    <span class="inline-block bg-charcoal/10 text-charcoal/60 border border-charcoal/20 text-[9px] uppercase tracking-widest px-3 py-1 font-semibold mb-6">
+                      Próximamente
+                    </span>
+                  </div>
+                  <div class="mt-auto">
+                    <span class="font-mono text-[10px] text-rosegold tracking-wider block mb-1">PROYECTO II // FASE DE LICENCIA</span>
+                    <h3 class="font-serif text-charcoal text-2xl font-light mb-3">Lanzamiento Costero</h3>
+                    <p class="font-sans text-charcoal/60 text-xs leading-relaxed mb-6">
+                      Desarrollo residencial en condominio campestre. Lotes con acceso directo a reservas naturales y planificación urbana detallada para garantizar plusvalía a largo plazo.
+                    </p>
+                    <span class="text-xs uppercase tracking-widest text-charcoal/40 font-mono">En Desarrollo Técnico</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proyecto 3: Próximamente -->
+            <div class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4">
+              <div class="bg-pearl/50 border border-charcoal/15 flex flex-col h-full rounded-sm overflow-hidden min-h-[420px] relative tech-grid-bg-fine group hover:border-rosegold transition-colors duration-500">
+                <!-- SVG Blueprint (Plano de Subdivisión) en el fondo -->
+                <svg class="absolute right-6 top-6 w-44 h-44 opacity-[0.07] text-charcoal pointer-events-none group-hover:opacity-[0.12] transition-opacity duration-500" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="0.3">
+                  <rect x="10" y="10" width="80" height="80" />
+                  <line x1="10" y1="26" x2="90" y2="26" />
+                  <line x1="10" y1="42" x2="90" y2="42" />
+                  <line x1="10" y1="58" x2="90" y2="58" />
+                  <line x1="10" y1="74" x2="90" y2="74" />
+                  <line x1="36" y1="10" x2="36" y2="90" />
+                  <line x1="64" y1="10" x2="64" y2="90" />
+                  <circle cx="50" cy="50" r="2" fill="currentColor" />
+                </svg>
+
+                <div class="p-8 flex flex-col h-full justify-between z-10 flex-grow">
+                  <div>
+                    <span class="inline-block bg-charcoal/10 text-charcoal/60 border border-charcoal/20 text-[9px] uppercase tracking-widest px-3 py-1 font-semibold mb-6">
+                      Próximamente
+                    </span>
+                  </div>
+                  <div class="mt-auto">
+                    <span class="font-mono text-[10px] text-rosegold tracking-wider block mb-1">PROYECTO III // ANÁLISIS DE SUELO</span>
+                    <h3 class="font-serif text-charcoal text-2xl font-light mb-3">Lotes Campestres</h3>
+                    <p class="font-sans text-charcoal/60 text-xs leading-relaxed mb-6">
+                      Ubicación estratégica con alto potencial de valorización. Condominio con club house, amplias zonas verdes comunes y normas constructivas para salvaguardar tu patrimonio.
+                    </p>
+                    <span class="text-xs uppercase tracking-widest text-charcoal/40 font-mono">Diseño de Trazado Urbano</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Botón Next (A la derecha) -->
+        <button id="next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 md:w-12 md:h-12 border border-rosegold text-rosegold bg-pearl/90 hover:bg-rosegold hover:text-pearl flex items-center justify-center transition-colors duration-300 rounded-none focus:outline-none z-20" aria-label="Siguiente proyecto">
+          <span class="text-lg block">→</span>
+        </button>
+      </div>
+
+      <!-- Barra de Progreso y Indicadores del Slider -->
+      <div class="mt-12 max-w-xs mx-auto">
+        <div class="w-full bg-charcoal/10 h-[2px] relative">
+          <div id="slider-progress" class="bg-rosegold h-full w-1/3 transition-all duration-300"></div>
+        </div>
+        <div class="flex justify-center space-x-2 mt-4">
+          <span class="slider-dot w-2 h-2 rounded-full bg-rosegold inline-block"></span>
+          <span class="slider-dot w-2 h-2 rounded-full bg-charcoal/20 inline-block"></span>
+          <span class="slider-dot w-2 h-2 rounded-full bg-charcoal/20 inline-block"></span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECCIÓN 3: ¿POR QUÉ INVERTIR EN LOTES? -->
+  <section id="por-que-invertir" class="py-24 border-b border-charcoal/10 bg-pearl relative">
+    
+    <!-- Elemento Decorativo CAD -->
+    <div class="absolute top-0 left-0 w-24 h-24 border-r border-b border-charcoal/5 pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <!-- Introducción / Cabezal -->
+      <div class="max-w-3xl mb-20">
+        <span class="font-mono text-xs text-rosegold uppercase tracking-widest block mb-2">[ FILOSOFÍA DE URBANISMO ]</span>
+        <h2 class="font-serif text-charcoal text-3xl md:text-4xl lg:text-5xl font-light mb-6 leading-tight">
+          ¿Por qué invertir en Lotes?
+        </h2>
+        <p class="font-sans text-charcoal/90 text-sm md:text-base leading-relaxed border-l-2 border-rosegold pl-6">
+          Invertir en un lote dentro de un condominio es una decisión distinta a comprar tierra sin planificación. Aquí hay reglas, diseño y una visión común que protege la inversión en el tiempo.
+        </p>
+      </div>
+
+      <!-- Rejilla de Pilares con Estructura de Plano Técnico -->
+      <div class="grid grid-cols-1 md:grid-cols-3 border border-charcoal/15 bg-pearl">
+        
+        <!-- Pilar 1 -->
+        <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-charcoal/15 relative flex flex-col justify-between group hover:bg-pearl/60 transition-colors duration-300">
+          <span class="absolute -top-1.5 -right-1.5 text-charcoal/30 font-mono text-[10px] hidden md:block">+</span>
+          <div>
+            <div class="font-serif text-rosegold text-5xl font-extralight mb-8">01</div>
+            <h3 class="font-serif text-charcoal text-2xl font-light mb-4">Planeación y orden urbano</h3>
+            <p class="font-sans text-charcoal/80 text-xs md:text-sm leading-relaxed">
+              Nuestros proyectos están desarrollados como condominios, con vías internas, zonas comunes y normas de construcción definidas desde el inicio. Esto evita el desorden, mantiene la armonía del proyecto y favorece la valorización.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 2 -->
+        <div class="p-8 md:p-12 border-b md:border-b-0 md:border-r border-charcoal/15 relative flex flex-col justify-between group hover:bg-pearl/60 transition-colors duration-300">
+          <span class="absolute -top-1.5 -right-1.5 text-charcoal/30 font-mono text-[10px] hidden md:block">+</span>
+          <div>
+            <div class="font-serif text-rosegold text-5xl font-extralight mb-8">02</div>
+            <h3 class="font-serif text-charcoal text-2xl font-light mb-4">Construcción con lineamientos claros</h3>
+            <p class="font-sans text-charcoal/80 text-xs md:text-sm leading-relaxed">
+              Cada condominio cuenta con estilos de fachada y reglas arquitectónicas que deben respetarse al construir. Esto garantiza coherencia visual, cuida el entorno y protege el valor de cada propiedad.
+            </p>
+          </div>
+        </div>
+
+        <!-- Pilar 3 -->
+        <div class="p-8 md:p-12 relative flex flex-col justify-between group hover:bg-pearl/60 transition-colors duration-300">
+          <div>
+            <div class="font-serif text-rosegold text-5xl font-extralight mb-8">03</div>
+            <h3 class="font-serif text-charcoal text-2xl font-light mb-4">Valorización con fundamento real</h3>
+            <p class="font-sans text-charcoal/80 text-xs md:text-sm leading-relaxed">
+              La valorización no depende solo del mercado, sino de la ubicación, el desarrollo del proyecto y el control constructivo. Un condominio bien planificado tiende a sostener y mejorar su valor con el tiempo.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 4: SOBRE NOSOTROS -->
+  <section id="nosotros" class="py-24 border-b border-charcoal/10 relative overflow-hidden bg-architect-grid">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+        
+        <!-- Columna de Texto Principal (Izquierda) -->
+        <div class="lg:col-span-6">
+          <span class="font-mono text-xs text-rosegold uppercase tracking-widest block mb-2">[ TRANSPARENCIA Y RESPALDO ]</span>
+          <h2 class="font-serif text-charcoal text-3xl md:text-4xl lg:text-5xl font-light mb-8 leading-tight">
+            Sobre Nosotros
+          </h2>
+          <div class="font-sans text-charcoal/90 text-sm md:text-base leading-relaxed space-y-6">
+            <p>
+              Somos una empresa dedicada a acompañar decisiones de inversión en lotes en condominio, con enfoque en legalidad, planificación y desarrollo a largo plazo.
+            </p>
+            <p class="border-l-2 border-rosegold pl-4 text-charcoal/85 italic">
+              Nuestro trabajo es seleccionar proyectos bien estructurados, con reglas claras y ubicación estratégica, para que invertir y construir sea un proceso seguro y con plusvalía garantizada.
+            </p>
+          </div>
+        </div>
+
+        <!-- Columna de Métricas y Garantías (Estilo Coordenadas en Cuadrícula) -->
+        <div class="lg:col-span-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 border border-charcoal/15 bg-pearl relative">
+            <!-- Puntos de Cruz CAD en Esquinas -->
+            <span class="absolute -top-1.5 -left-1.5 text-rosegold font-mono text-xs">+</span>
+            <span class="absolute -bottom-1.5 -left-1.5 text-rosegold font-mono text-xs">+</span>
+            <span class="absolute -top-1.5 -right-1.5 text-rosegold font-mono text-xs">+</span>
+            <span class="absolute -bottom-1.5 -right-1.5 text-rosegold font-mono text-xs">+</span>
+
+            <!-- Bloque 1: Experiencia -->
+            <div class="p-8 border-b sm:border-b-0 sm:border-r border-charcoal/15 flex flex-col justify-between min-h-[160px] relative">
+              <span class="absolute top-4 right-4 text-[9px] font-mono text-rosegold tracking-wider">[ COORD_X.01 ]</span>
+              <div>
+                <span class="text-3xl font-serif font-light text-charcoal block">10+ Años</span>
+                <span class="text-xs text-charcoal/60 uppercase font-semibold font-mono tracking-widest mt-2 block">Experiencia</span>
+              </div>
+              <p class="text-[11px] text-charcoal/70 font-sans mt-3">
+                Años de experiencia guiando portafolios de inversión en el Caribe.
+              </p>
+            </div>
+
+            <!-- Bloque 2: Familias -->
+            <div class="p-8 border-b border-charcoal/15 sm:border-b-0 flex flex-col justify-between min-h-[160px] relative">
+              <span class="absolute top-4 right-4 text-[9px] font-mono text-rosegold tracking-wider">[ COORD_Y.02 ]</span>
+              <div>
+                <span class="text-3xl font-serif font-light text-charcoal block">300+</span>
+                <span class="text-xs text-charcoal/60 uppercase font-semibold font-mono tracking-widest mt-2 block">Familias</span>
+              </div>
+              <p class="text-[11px] text-charcoal/70 font-sans mt-3">
+                Familias satisfechas que han asegurado su patrimonio territorial.
+              </p>
+            </div>
+
+            <!-- Bloque 3: Plusvalía -->
+            <div class="p-8 border-r border-charcoal/15 sm:border-t flex flex-col justify-between min-h-[160px] relative">
+              <span class="absolute top-4 right-4 text-[9px] font-mono text-rosegold tracking-wider">[ COORD_X.03 ]</span>
+              <div>
+                <span class="text-3xl font-serif font-light text-charcoal block">15% - 22%</span>
+                <span class="text-xs text-charcoal/60 uppercase font-semibold font-mono tracking-widest mt-2 block">Plusvalía Anual</span>
+              </div>
+              <p class="text-[11px] text-charcoal/70 font-sans mt-3">
+                Plusvalía anual promedio de nuestros lotes en condominio desarrollados.
+              </p>
+            </div>
+
+            <!-- Bloque 4: Legalidad (Texto Especial de Garantía) -->
+            <div class="p-8 sm:border-t flex flex-col justify-between min-h-[160px] bg-rosegold/5 relative">
+              <span class="absolute top-4 right-4 text-[9px] font-mono text-rosegold tracking-wider">[ GARANTÍA ]</span>
+              <div>
+                <span class="text-lg font-serif font-semibold text-rosegold block">Legalidad 100%</span>
+                <span class="text-xs text-charcoal/60 uppercase font-semibold font-mono tracking-widest mt-2 block">Respaldo Jurídico</span>
+              </div>
+              <p class="text-[11px] text-charcoal/80 font-sans mt-3">
+                Legalidad 100% garantizada en todos nuestros proyectos seleccionados.
+              </p>
+            </div>
+          </div>
+          
+          <!-- Frase técnica adicional abajo del grid -->
+          <div class="mt-6 flex items-center space-x-3 text-xs text-charcoal/60 font-mono">
+            <span class="w-1.5 h-1.5 bg-rosegold rounded-full inline-block"></span>
+            <span>Ubicación estratégica y con alto potencial de valorización en el norte de Colombia.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 5: PREGUNTAS FRECUENTES (FAQ) -->
+  <section id="faq" class="py-24 border-b border-charcoal/10 bg-pearl relative">
+    <div class="max-w-4xl mx-auto px-6">
+      
+      <!-- Encabezado FAQ -->
+      <div class="text-center mb-20">
+        <span class="font-mono text-xs text-rosegold uppercase tracking-widest block mb-2">[ RESOLUCIÓN TÉCNICA ]</span>
+        <h2 class="font-serif text-charcoal text-3xl md:text-4xl lg:text-5xl font-light">
+          Preguntas Frecuentes (FAQ)
+        </h2>
+        <p class="font-sans text-charcoal/60 text-xs md:text-sm mt-3">
+          Diseño modular integrado a las líneas del plano. Respuestas claras para una inversión segura.
+        </p>
+      </div>
+
+      <!-- Estructura de Acordeones Técnicos -->
+      <div class="border-t border-charcoal/15">
+        
+        <!-- Pregunta 1 (Literal) -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(1)">
+            <span class="font-light pr-6">¿Qué diferencia hay entre comprar un lote en condominio y un lote común?</span>
+            <span id="faq-icon-1" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-1" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                Un lote en condominio forma parte de un proyecto planificado con normas de construcción, zonas comunes, vías internas y reglas arquitectónicas definidas. Esto garantiza orden, valorización sostenida y protección de la inversión, a diferencia de un lote común sin planificación.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 2 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(2)">
+            <span class="font-light pr-6">¿Cuáles son las opciones de financiación directa y plazos de pago?</span>
+            <span id="faq-icon-2" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-2" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                Ofrecemos esquemas de financiación flexible y directa adaptados a tu plan de inversión. Habitualmente se establece una cuota inicial mínima (del 20% al 30%) y el saldo restante se puede diferir en cuotas mensuales durante el periodo de entrega de la urbanización, sin intermediación bancaria.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 3 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(3)">
+            <span class="font-light pr-6">¿Qué servicios públicos e infraestructura se entregan con cada lote?</span>
+            <span id="faq-icon-3" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-3" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                Cada lote en nuestros proyectos se entrega con acometidas domiciliarias listas para la conexión a los servicios públicos de energía eléctrica, agua potable y sistema de saneamiento/alcantarillado. Adicionalmente, el condominio incluye vías pavimentadas y alumbrado público.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 4 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(4)">
+            <span class="font-light pr-6">¿Existe un reglamento constructivo específico para las viviendas?</span>
+            <span id="faq-icon-4" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-4" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                Sí. Para garantizar la armonía estética y conservar el valor del condominio, existe un Manual de Diseño Arquitectónico y un Reglamento de Propiedad Horizontal. Este documento delimita alturas permitidas, retiros de linderos, paletas de colores y estilos generales de fachadas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 5 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(5)">
+            <span class="font-light pr-6">¿Cómo está respaldada legalmente la viabilidad de la compra?</span>
+            <span id="faq-icon-5" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-5" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                Nuestros proyectos cuentan con licencias de urbanización aprobadas por curaduría u oficina de planeación municipal, escrituración individual debidamente registrada en la Oficina de Instrumentos Públicos, y viabilidades ambientales aprobadas por las corporaciones del departamento.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 6 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(6)">
+            <span class="font-light pr-6">¿Cómo es el proceso de escrituración y plazos estimados?</span>
+            <span id="faq-icon-6" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-6" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                Una vez cumplido el pago total del lote o las condiciones establecidas en la Promesa de Compraventa, se agenda la firma de la escritura pública ante notaría. El registro oficial de la propiedad ante Instrumentos Públicos tarda entre 30 y 45 días laborables posteriores a la firma.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 7 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(7)">
+            <span class="font-light pr-6">¿Quién se encarga del mantenimiento de las áreas comunes?</span>
+            <span id="faq-icon-7" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-7" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                La administración general del condominio, que incluye vigilancia, limpieza de vías, mantenimiento de piscinas y zonas verdes comunes, recae sobre una empresa administradora designada y controlada por la junta de copropietarios, mediante el pago de una cuota de administración fija.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pregunta 8 -->
+        <div class="border-b border-charcoal/15 py-6">
+          <button class="flex justify-between items-center w-full text-left font-serif text-lg md:text-xl text-charcoal hover:text-rosegold transition-colors duration-300 focus:outline-none" onclick="toggleFAQ(8)">
+            <span class="font-light pr-6">¿Cómo puedo reservar un lote y asegurar su disponibilidad?</span>
+            <span id="faq-icon-8" class="text-rosegold font-light text-2xl transition-transform duration-300 inline-block font-mono">+</span>
+          </button>
+          <div id="faq-content-8" class="grid grid-rows-[0fr] transition-all duration-300 ease-in-out overflow-hidden">
+            <div class="min-h-0">
+              <p class="pt-4 text-charcoal/75 font-sans text-xs md:text-sm leading-relaxed pl-1 border-l-2 border-rosegold/30 mt-2">
+                El proceso inicia con la separación económica del lote seleccionado mediante un depósito de reserva. Posteriormente, cuentas con un plazo de 10 a 15 días calendario para formalizar el contrato de Promesa de Compraventa, pactando la cuota inicial y el esquema de pagos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 6: SECCIÓN DE CONTACTO -->
+  <section id="contacto" class="py-24 border-b border-charcoal/10 bg-architect-grid relative">
+    <div class="max-w-3xl mx-auto px-6">
+      
+      <!-- Tarjeta del Formulario (Plano Técnico) -->
+      <div class="bg-pearl border border-charcoal/15 p-8 md:p-12 rounded-sm shadow-xl relative">
+        <span class="absolute -top-1.5 -left-1.5 text-rosegold font-mono text-xs">+</span>
+        <span class="absolute -bottom-1.5 -left-1.5 text-rosegold font-mono text-xs">+</span>
+        <span class="absolute -top-1.5 -right-1.5 text-rosegold font-mono text-xs">+</span>
+        <span class="absolute -bottom-1.5 -right-1.5 text-rosegold font-mono text-xs">+</span>
+
+        <div class="text-center mb-10">
+          <span class="font-mono text-xs text-rosegold uppercase tracking-widest block mb-2">[ COMUNICACIÓN DIRECTA ]</span>
+          <h2 class="font-serif text-charcoal text-2xl md:text-3xl font-light mb-4">Asesoría Inmobiliaria</h2>
+          <p class="font-sans text-charcoal/80 text-xs md:text-sm leading-relaxed">
+            Estamos listos para asesorarte en tu próxima inversión inmobiliaria. Completa el formulario y nuestro equipo se pondrá en contacto contigo.
+          </p>
+        </div>
+
+        <!-- Formulario Técnico -->
+        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+          
+          <!-- Nombre Completo -->
+          <div>
+            <label for="name" class="block font-mono text-[9px] uppercase tracking-wider text-charcoal/70 mb-1">Nombre Completo</label>
+            <input type="text" id="name" required class="w-full bg-pearl/60 border border-charcoal/20 px-4 py-3 text-xs md:text-sm focus:outline-none focus:border-rosegold transition-colors rounded-none placeholder-charcoal/30" placeholder="Escribe tu nombre y apellido">
+          </div>
+
+          <!-- Fila: Correo y Teléfono -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block font-mono text-[9px] uppercase tracking-wider text-charcoal/70 mb-1">Correo Electrónico</label>
+              <input type="email" id="email" required class="w-full bg-pearl/60 border border-charcoal/20 px-4 py-3 text-xs md:text-sm focus:outline-none focus:border-rosegold transition-colors rounded-none placeholder-charcoal/30" placeholder="correo@ejemplo.com">
+            </div>
+            <div>
+              <label for="phone" class="block font-mono text-[9px] uppercase tracking-wider text-charcoal/70 mb-1">Teléfono</label>
+              <div class="flex">
+                <span class="bg-charcoal/10 border-y border-l border-charcoal/20 px-3 py-3 font-mono text-xs md:text-sm text-charcoal/70 flex items-center justify-center">+57</span>
+                <input type="tel" id="phone" required class="w-full bg-pearl/60 border border-charcoal/20 px-4 py-3 text-xs md:text-sm focus:outline-none focus:border-rosegold transition-colors rounded-none placeholder-charcoal/30" placeholder="300 000 0000">
+              </div>
+            </div>
+          </div>
+
+          <!-- Proyecto de Interés -->
+          <div>
+            <label for="project" class="block font-mono text-[9px] uppercase tracking-wider text-charcoal/70 mb-1">Proyecto de Interés</label>
+            <select id="project" class="w-full bg-pearl/60 border border-charcoal/20 px-4 py-3 text-xs md:text-sm focus:outline-none focus:border-rosegold transition-colors rounded-none text-charcoal">
+              <option value="Mayatt">Mayatt (Disponible)</option>
+              <option value="Proximamente-Costero">Lanzamiento Costero (Próximamente)</option>
+              <option value="Proximamente-Campestre">Lotes Campestres (Próximamente)</option>
+              <option value="Consulta-General">Consulta General / Asesoría General</option>
+            </select>
+          </div>
+
+          <!-- Mensaje -->
+          <div>
+            <label for="message" class="block font-mono text-[9px] uppercase tracking-wider text-charcoal/70 mb-1">Mensaje</label>
+            <textarea id="message" rows="4" class="w-full bg-pearl/60 border border-charcoal/20 px-4 py-3 text-xs md:text-sm focus:outline-none focus:border-rosegold transition-colors rounded-none placeholder-charcoal/30 resize-none" placeholder="Cuéntanos sobre tu interés en invertir..."></textarea>
+          </div>
+
+          <!-- Botón de Envío -->
+          <div class="pt-4">
+            <button type="submit" class="w-full bg-charcoal hover:bg-rosegold text-pearl font-mono text-xs uppercase tracking-widest font-semibold py-4 transition-colors duration-300 rounded-none shadow-md focus:outline-none">
+              Enviar Mensaje
+            </button>
+          </div>
+        </form>
+
+        <!-- Mensaje de Éxito Técnico (Oculto por defecto) -->
+        <div id="success-message" class="hidden absolute inset-0 bg-pearl p-8 md:p-12 flex flex-col justify-center items-center text-center z-20">
+          <div class="w-16 h-16 bg-rosegold/10 border border-rosegold/30 flex items-center justify-center mb-6">
+            <span class="text-rosegold text-3xl font-mono">✓</span>
+          </div>
+          <h3 class="font-serif text-charcoal text-2xl font-light mb-3">Mensaje Transmitido con Éxito</h3>
+          <p class="font-sans text-charcoal/70 text-xs md:text-sm max-w-md leading-relaxed mb-6">
+            Tu solicitud de información ha sido procesada por la plataforma de Claudia Milena Mendoza. Un asesor especializado se comunicará contigo vía telefónica o correo electrónico a la brevedad.
+          </p>
+          <div class="text-[10px] font-mono text-rosegold border border-rosegold/20 px-4 py-2 bg-rosegold/5 uppercase tracking-widest">
+            LOG_ID: REG-MENDOZA-3.13-OK
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN 7: FOOTER -->
+  <footer class="bg-charcoal text-pearl/80 border-t border-charcoal-dark relative z-10 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 pb-16 border-b border-pearl/10">
+        
+        <!-- Columna 1: Marca (Ajustado: Logo blanco sin contenedor) -->
+        <div class="lg:col-span-4">
+          <div class="mb-5">
+            <img src="LOGO CLAUDIA MENDOZA BLANCO.svg" alt="Claudia Milena Mendoza" class="h-10 w-auto object-contain">
+          </div>
+          <p class="text-xs text-pearl/60 leading-relaxed max-w-xs font-sans">
+            Especialistas en inversión inmobiliaria con proyectos de lotes en condominio.
+          </p>
+          <!-- Bloque de Aliados Propfy (Requerido) -->
+          <div class="mt-6 pt-6 border-t border-pearl/10">
+            <span class="block text-[9px] font-mono tracking-widest text-rosegold uppercase mb-3">Aliados Propfy</span>
+            <img src="LOGO-PFY-BLANCO.svg" alt="Propfy Logo" class="h-6 w-auto opacity-80 object-contain">
+          </div>
+        </div>
+
+        <!-- Columna 2: Navegación -->
+        <div class="lg:col-span-2">
+          <h4 class="font-mono text-[10px] uppercase tracking-widest text-rosegold font-semibold mb-5">[ NAVEGACIÓN ]</h4>
+          <ul class="space-y-3 font-sans text-xs">
+            <li><a href="#inicio" class="hover:text-rosegold transition-colors">Inicio</a></li>
+            <li><a href="#nosotros" class="hover:text-rosegold transition-colors">Nosotros</a></li>
+            <li><a href="#proyectos" class="hover:text-rosegold transition-colors">Proyectos</a></li>
+            <li><a href="#por-que-invertir" class="hover:text-rosegold transition-colors">¿Por qué invertir?</a></li>
+            <li><a href="#faq" class="hover:text-rosegold transition-colors">FAQ</a></li>
+            <li><a href="#contacto" class="hover:text-rosegold transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- Columna 3: Proyectos -->
+        <div class="lg:col-span-2">
+          <h4 class="font-mono text-[10px] uppercase tracking-widest text-rosegold font-semibold mb-5">[ PROYECTOS ]</h4>
+          <ul class="space-y-3 font-sans text-xs text-pearl/60">
+            <li><a href="mayatt.html" class="hover:text-rosegold transition-colors text-pearl/80 font-medium">Mayatt <span class="text-[9px] text-rosegold font-mono font-semibold ml-1">[DISPONIBLE]</span></a></li>
+            <li><span class="italic text-pearl/40">Lanzamiento Costero</span></li>
+            <li><span class="italic text-pearl/40">Lotes Campestres</span></li>
+          </ul>
+        </div>
+
+        <!-- Columna 4: Información de Contacto Directa -->
+        <div class="lg:col-span-4">
+          <h4 class="font-mono text-[10px] uppercase tracking-widest text-rosegold font-semibold mb-5">[ CONTACTO DIRECTO ]</h4>
+          <ul class="space-y-3 font-sans text-xs leading-relaxed font-medium">
+            <li>
+              <span class="block text-rosegold font-semibold">Aliado Comercial Inmobiliario</span>
+              <span class="text-pearl">Claudia Milena Mendoza Ayola</span>
+            </li>
+            <li>
+              <span class="block text-rosegold font-semibold">Correo Electrónico</span>
+              <a href="mailto:milenamendozaaliada@gmail.com" class="text-pearl hover:text-rosegold transition-colors break-all font-medium">milenamendozaaliada@gmail.com</a>
+            </li>
+            <li>
+              <span class="block text-rosegold font-semibold">Teléfono de Contacto</span>
+              <span class="text-pearl font-medium">+57 300 000 0000</span>
+            </li>
+            <li>
+              <span class="block text-rosegold font-semibold">Dirección de Oficina</span>
+              <span class="text-pearl/70 font-medium">Kra 36 N. 247- 37 conjunto Residencial Puntalta Altagracia apto 110 torre 2</span>
+            </li>
+            <li>
+              <span class="block text-rosegold font-semibold">Horarios de Atención</span>
+              <span class="text-pearl/70 block font-medium">Lunes a Viernes: 9:00 AM - 7:00 PM</span>
+              <span class="text-pearl/70 block font-medium">Sábados: 9:00 AM - 5:00 PM</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Derechos de Autor -->
+      <div class="pt-8 flex flex-col md:flex-row md:items-center justify-between text-xs text-pearl/40 font-mono">
+        <p>&copy; 2026 Claudia Milena Mendoza Ayola. Todos los derechos reservados.</p>
+        <p class="mt-2 md:mt-0 tracking-wider">REGISTRO DE PROPIEDAD INTELECTUAL</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- SCRIPT PARA EL CUAL CONTROLAR LA INTERACTIVIDAD -->
+  <script>
+    // --- MENÚ MÓVIL ---
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      if (mobileMenu.classList.contains('hidden')) {
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      } else {
+        // Poner la X
+        menuIcon.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      }
+    });
+
+    // Cerrar menú móvil al hacer click en un enlace
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      });
+    });
+
+    // --- ACCORDION FAQ ---
+    function toggleFAQ(id) {
+      // Cerrar otros acordeones
+      for (let i = 1; i <= 8; i++) {
+        if (i !== id) {
+          const c = document.getElementById(`faq-content-${i}`);
+          const ic = document.getElementById(`faq-icon-${i}`);
+          if (c && !c.classList.contains('grid-rows-[0fr]')) {
+            c.classList.remove('grid-rows-[1fr]');
+            c.classList.add('grid-rows-[0fr]');
+            ic.style.transform = 'rotate(0deg)';
+          }
+        }
+      }
+
+      // Conmutar el acordeón seleccionado
+      const content = document.getElementById(`faq-content-${id}`);
+      const icon = document.getElementById(`faq-icon-${id}`);
+      
+      if (content.classList.contains('grid-rows-[0fr]')) {
+        content.classList.remove('grid-rows-[0fr]');
+        content.classList.add('grid-rows-[1fr]');
+        icon.style.transform = 'rotate(45deg)';
+      } else {
+        content.classList.remove('grid-rows-[1fr]');
+        content.classList.add('grid-rows-[0fr]');
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+
+    // --- SLIDER INTERACTIVO DE PROYECTOS (BOTONES A LOS COSTADOS) ---
+    let currentIndex = 0;
+    const track = document.getElementById('slider-track');
+    const cards = track.children;
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressBar = document.getElementById('slider-progress');
+    const dots = document.querySelectorAll('.slider-dot');
+
+    function updateSlider() {
+      const isDesktop = window.innerWidth >= 1024;
+      const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024;
+      
+      let cardsPerView = 1;
+      if (isDesktop) cardsPerView = 3;
+      else if (isTablet) cardsPerView = 2;
+      
+      const totalCards = cards.length;
+      const maxIndex = totalCards - cardsPerView;
+      
+      // Control de límites
+      if (currentIndex > maxIndex) currentIndex = maxIndex;
+      if (currentIndex < 0) currentIndex = 0;
+      
+      // Traducción del track
+      const translatePercent = currentIndex * (100 / cardsPerView);
+      track.style.transform = `translateX(-${translatePercent}%)`;
+      
+      // Habilitar/Deshabilitar botones visualmente
+      if (currentIndex === 0) {
+        prevBtn.classList.add('opacity-30', 'cursor-not-allowed');
+      } else {
+        prevBtn.classList.remove('opacity-30', 'cursor-not-allowed');
+      }
+      
+      if (currentIndex >= maxIndex) {
+        nextBtn.classList.add('opacity-30', 'cursor-not-allowed');
+      } else {
+        nextBtn.classList.remove('opacity-30', 'cursor-not-allowed');
+      }
+      
+      // Actualizar barra de progreso
+      if (progressBar) {
+        progressBar.style.width = `${((currentIndex + cardsPerView) / totalCards) * 100}%`;
+      }
+      
+      // Actualizar dots
+      dots.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.add('bg-rosegold');
+          dot.classList.remove('bg-charcoal/20');
+        } else {
+          dot.classList.remove('bg-rosegold');
+          dot.classList.add('bg-charcoal/20');
+        }
+      });
+    }
+
+    prevBtn.addEventListener('click', () => {
+      const cardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+      const maxIndex = cards.length - cardsPerView;
+      
+      if (currentIndex > 0) {
+        currentIndex--;
+      } else {
+        currentIndex = maxIndex; // Bucle infinito
+      }
+      updateSlider();
+    });
+
+    nextBtn.addEventListener('click', () => {
+      const cardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+      const maxIndex = cards.length - cardsPerView;
+      
+      if (currentIndex < maxIndex) {
+        currentIndex++;
+      } else {
+        currentIndex = 0; // Bucle infinito
+      }
+      updateSlider();
+    });
+
+    // Detectar gestos touch (deslizar) en móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, {passive: true});
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, {passive: true});
+
+    function handleSwipe() {
+      const cardsPerView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+      const maxIndex = cards.length - cardsPerView;
+      
+      const threshold = 50; 
+      if (touchStartX - touchEndX > threshold) {
+        // Deslizar izquierda (siguiente)
+        if (currentIndex < maxIndex) {
+          currentIndex++;
+          updateSlider();
+        }
+      } else if (touchEndX - touchStartX > threshold) {
+        // Deslizar derecha (anterior)
+        if (currentIndex > 0) {
+          currentIndex--;
+          updateSlider();
+        }
+      }
+    }
+
+    window.addEventListener('resize', () => {
+      updateSlider();
+    });
+
+    // Inicializar slider
+    updateSlider();
+
+    // --- SELECCIONAR PROYECTO DESDE TARJETA A FORMULARIO ---
+    function setInterestProject(projectName) {
+      const selectElement = document.getElementById('project');
+      if (projectName === 'Mayatt') {
+        selectElement.value = 'Mayatt';
+      }
+    }
+
+    // --- ENVÍO DE FORMULARIO CON INTERACCIÓN ---
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      const submitButton = event.target.querySelector('button[type="submit"]');
+      const successMessage = document.getElementById('success-message');
+      
+      // Mostrar estado de carga en el botón
+      submitButton.disabled = true;
+      submitButton.innerText = "PROCESANDO SOLICITUD...";
+      
+      // Simular transmisión técnica de datos
+      setTimeout(() => {
+        successMessage.classList.remove('hidden');
+        
+        // Limpiar formulario
+        event.target.reset();
+      }, 1500);
+    }
+  </script>
+</body>
+</html>
